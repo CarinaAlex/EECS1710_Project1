@@ -2,7 +2,7 @@ class House {
   
   PVector position;
   float scale;
-  PImage house_img;
+  PImage house_img = loadImage("house.png");;
   float img_width;
   float img_height;
   boolean isOpen = false;
@@ -17,22 +17,17 @@ class House {
   
   
   House() {
-    
     this(1);
-    //house_img = loadImage("house.png")
-    //img_width = house_img.width / scale;
-    //img_height = house_img.height / scale;
-    //position = new PVector(440, 250);
   }
   
-  House(float _scale) {
+   House(float _scale) {
     scale = _scale;
-    house_img = loadImage("house.png");
+    
     img_width = house_img.width / scale;
     img_height = house_img.height / scale;
     position = new PVector(house_pos_x, house_pos_y);
   }
-  
+
   void display() {  // draw a new house!
     image(house_img, position.x, position.y, img_width, img_height);
     fill(0);
@@ -91,6 +86,20 @@ class House {
     isOpen = true;
   }
   
+  // public void close_door_thread(){
+  //   if(!isOpen){
+  //     return;
+  //   }
+  //   for(int i = door_size_y; i >= 0; i--){
+  //     door_size_current--;
+  //   }
+  //   isOpen = false;
+  // }
+
+  // void close_door(){
+  //   thread("close_door_thread");
+  // }
+
   void close_door(){
     if(!isOpen){
       return;
