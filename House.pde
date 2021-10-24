@@ -1,5 +1,6 @@
 class House {
   
+  // sets position, scale, and size of house
   PVector position;
   float scale;
   PImage house_img = loadImage("house.png");;
@@ -33,48 +34,8 @@ class House {
     fill(0);
     stroke(0);
     rect(house_pos_x + door_offset_x, house_pos_y + door_offset_y, door_size_x, door_size_current); 
-  }
+  }  
   
-  //void draw_open_door(){  // draw fully open door
-  //  display();
-  //  fill(0);
-  //  stroke(0);
-  //  rect(house_pos_x + door_offset_x, house_pos_y + door_offset_y, door_size_x, door_size_y); 
-  //}
-  
-  //void draw_opening_door(){
-  //  for(int i = 0; i < (int)door_size_y; i++){
-  //    //display();
-  //    delay(delay_time);
-  //    rect(house_pos_x + door_offset_x, house_pos_y + door_offset_y, door_size_x, i); 
-  //  }
-  //}
-  
-  //void draw_closing_door(){
-  //  for(int i = (int)door_size_y; i >= 0; i--){
-  //    //display();
-  //    delay(delay_time);
-  //    rect(house_pos_x + door_offset_x, house_pos_y + door_offset_y, door_size_x, i); 
-  //  }
-  //}
-  
-  //void draw_closed_door(){  // draw fully closed door
-  //  display();
-  //  fill(255);
-  //  stroke(0);
-  //  rect(house_pos_x + door_offset_x, house_pos_y + door_offset_y, door_size_x, 0); 
-  //}
-  
-  //void animate_door() {  // door opening/closing animation
-  //  if(isOpen){  // if door is open
-  //    //draw_closing_door();
-  //    draw_closed_door();
-  //  }
-  //  else{  // if door is closed
-  //    //draw_opening_door();
-  //    draw_open_door();
-  //  }
-  //}
   
   void open_door(){
     if(isOpen){
@@ -85,20 +46,6 @@ class House {
     }
     isOpen = true;
   }
-  
-  // public void close_door_thread(){
-  //   if(!isOpen){
-  //     return;
-  //   }
-  //   for(int i = door_size_y; i >= 0; i--){
-  //     door_size_current--;
-  //   }
-  //   isOpen = false;
-  // }
-
-  // void close_door(){
-  //   thread("close_door_thread");
-  // }
 
   void close_door(){
     if(!isOpen){
