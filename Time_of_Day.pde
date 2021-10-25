@@ -32,7 +32,7 @@ class Time_of_Day {
   float wheat_width = wheat_img.width / wheat_scale;
   float wheat_height = wheat_img.height / wheat_scale;
   int wheat_pos_x = (int)random(50,900);
-  int wheat_pos_y = (int)random(300,800);
+  int wheat_pos_y = (int)random(300,630);
 
   
   // grass scale and position

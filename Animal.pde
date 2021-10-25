@@ -58,6 +58,7 @@ class Animal {
     direction = 3;
     current_img = img_blank;
     change_img_dims();
+    isMoving = false;
   }
   
 
@@ -116,6 +117,14 @@ class Animal {
     hypotenuse.y = target.y - position.y;
 
     hypotenuse_norm = hypotenuse;
+  }
+
+  void stop(){
+    isMoving = false;
+    hypotenuse.x = 0;
+    hypotenuse.y = 0;
+    hypotenuse_norm = hypotenuse;
+    face_front();
   }
 
 }

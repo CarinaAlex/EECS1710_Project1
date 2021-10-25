@@ -31,7 +31,7 @@ class Rabbit extends Animal {
   boolean didFoxCatchRabbit(PVector fox_position){
     float distance = dist(fox_position.x, fox_position.y, position.x, position.y);
 
-    if(distance < 60){
+    if(distance < 30){
       position.x = rabbit_pos_init_x;
       position.y = rabbit_pos_init_y;
       return true;

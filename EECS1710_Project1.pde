@@ -40,12 +40,16 @@ void draw() {
 
 
   // if it is day time and rabbit is out of garage or if wheat is eaten at night, then fox chases rabbit
-  if((!time.isDay && time.isWheatEaten) || (time.isDay && (!bob.inGarage()))) alice.move(bob.position);
+  if((!time.isDay && time.isWheatEaten && !bob.inGarage()) || (time.isDay && (!bob.inGarage()))) alice.move(bob.position);
+  else alice.stop();
   if(bob.didFoxCatchRabbit(alice.position)){
     bob.disappear(); // if fox catches rabbit, then rabbit disappears; and respawns back in house.
+    alice.stop(); // if fox catches rabbit, then fox stops and sits.
   }
 
   if(!time.isDay) alice.FoxSleep(); // if it is nightime, then fox is sleeping
+
+
 
 }
 
